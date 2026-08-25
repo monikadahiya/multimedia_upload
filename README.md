@@ -120,6 +120,6 @@ The fastest free path is **Vercel** (frontend) + **Railway or Render** (backend)
 2. **Backend → Railway/Render**: create a new service from the `backend/` folder, add the env vars from the table above, deploy. Note the resulting URL (e.g. `https://multimediaupload-api.up.railway.app`).
 3. **Frontend → Vercel**: import the repo, set the root directory to `frontend/`, add `REACT_APP_API_URL=https://<your-backend-url>/api`, deploy.
 4. Back in the backend service, set `CLIENT_URL` to your new Vercel URL and redeploy so CORS/cookies allow it.
-5. Add your live frontend URL here.
+5. Add your live frontend URL here
 
 
