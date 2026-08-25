@@ -1,0 +1,45 @@
+@import 'variables';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  &__brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    a { color: $color-text; text-decoration: none; font-weight: 500; }
+    a:hover { color: $color-primary; }
+  }
+
+  &__user { color: $color-muted; font-size: 0.9rem; }
+
+  &__cta {
+    background: $color-primary;
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    border-radius: $radius;
+  }
+
+  &__logout {
+    background: none;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    color: $color-text;
+    &:hover { border-color: $color-danger; color: $color-danger; }
+  }
+}

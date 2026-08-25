@@ -1,0 +1,82 @@
+@import 'variables';
+
+.file-card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__preview {
+    height: 160px;
+    background: #f0f0f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+  }
+
+  &__audio { width: 100%; padding: 1rem; }
+
+  &__body { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: $color-muted;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  &__tag {
+    background: #edeaff;
+    color: $color-primary-dark;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: $color-muted;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.25rem;
+
+    a { color: $color-primary; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+  }
+
+  &__delete {
+    background: none;
+    border: none;
+    color: $color-danger;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+}

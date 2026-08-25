@@ -1,0 +1,92 @@
+{
+  "info": {
+    "name": "MediaVault API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" }
+  ],
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\",\n  \"password\": \"SuperSecret123\"\n}"
+        },
+        "url": "{{baseUrl}}/auth/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"jane@example.com\",\n  \"password\": \"SuperSecret123\"\n}"
+        },
+        "url": "{{baseUrl}}/auth/login"
+      }
+    },
+    {
+      "name": "Get current user",
+      "request": { "method": "GET", "url": "{{baseUrl}}/auth/me" }
+    },
+    {
+      "name": "Refresh token",
+      "request": { "method": "POST", "url": "{{baseUrl}}/auth/refresh" }
+    },
+    {
+      "name": "Logout",
+      "request": { "method": "POST", "url": "{{baseUrl}}/auth/logout" }
+    },
+    {
+      "name": "Upload file",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/files/upload",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "fileName", "value": "my-video.mp4", "type": "text" },
+            { "key": "description", "value": "A short clip", "type": "text" },
+            { "key": "tags", "value": "demo,test", "type": "text" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search files",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/files/search?query=video&sortBy=relevance&page=1&limit=12",
+          "host": ["{{baseUrl}}"],
+          "path": ["files", "search"],
+          "query": [
+            { "key": "query", "value": "video" },
+            { "key": "sortBy", "value": "relevance" },
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "12" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List my files",
+      "request": { "method": "GET", "url": "{{baseUrl}}/files?page=1&limit=12" }
+    },
+    {
+      "name": "Get file by id",
+      "request": { "method": "GET", "url": "{{baseUrl}}/files/:id" }
+    },
+    {
+      "name": "Delete file",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/files/:id" }
+    }
+  ]
+}

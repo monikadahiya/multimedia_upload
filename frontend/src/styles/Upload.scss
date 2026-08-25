@@ -1,0 +1,58 @@
+@import 'variables';
+
+.upload-page { display: flex; justify-content: center; }
+
+.upload-form {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2 { margin: 0; }
+
+  &__dropzone {
+    border: 2px dashed $color-border;
+    border-radius: $radius;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: $color-muted;
+    cursor: pointer;
+    input { display: none; }
+    &:hover { border-color: $color-primary; color: $color-primary; }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: $color-muted;
+    input, textarea {
+      font-family: inherit;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid $color-border;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: $color-text;
+    }
+  }
+
+  button[type='submit'] {
+    background: $color-primary;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    &:disabled { opacity: 0.6; cursor: not-allowed; }
+  }
+
+  &__error { color: $color-danger; margin: 0; }
+  &__success { color: $color-success; margin: 0; }
+}
