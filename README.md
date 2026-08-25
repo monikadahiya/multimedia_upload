@@ -122,6 +122,4 @@ The fastest free path is **Vercel** (frontend) + **Railway or Render** (backend)
 4. Back in the backend service, set `CLIENT_URL` to your new Vercel URL and redeploy so CORS/cookies allow it.
 5. Add your live frontend URL here.
 
-## License
 
-MIT
