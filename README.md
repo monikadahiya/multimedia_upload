@@ -1,11 +1,11 @@
-# MediaVault
+# Multimedia Upload
 
 A full-stack multimedia library: upload images, videos, audio, and PDFs; preview them inline; search by name/tag; and get results ranked by relevance (keyword match + view count + recency).
 
 **Stack:** React (Hooks + Redux Toolkit) · Node.js/Express · MongoDB Atlas · Cloudinary · JWT auth
 
 ```
-mediavault/
+multimedia_upload/
 ├── backend/     Express API (auth, uploads, search, Swagger docs)
 ├── frontend/    React SPA (Redux store, protected routes, upload/search UI)
 └── postman_collection.json
@@ -117,7 +117,7 @@ Weights are adjustable per-request via `sortBy=relevance|popularity|date`.
 The fastest free path is **Vercel** (frontend) + **Railway or Render** (backend), both of which read `PORT` from the environment automatically.
 
 1. Push this repo to your own GitHub account.
-2. **Backend → Railway/Render**: create a new service from the `backend/` folder, add the env vars from the table above, deploy. Note the resulting URL (e.g. `https://mediavault-api.up.railway.app`).
+2. **Backend → Railway/Render**: create a new service from the `backend/` folder, add the env vars from the table above, deploy. Note the resulting URL (e.g. `https://multimediaupload-api.up.railway.app`).
 3. **Frontend → Vercel**: import the repo, set the root directory to `frontend/`, add `REACT_APP_API_URL=https://<your-backend-url>/api`, deploy.
 4. Back in the backend service, set `CLIENT_URL` to your new Vercel URL and redeploy so CORS/cookies allow it.
 5. Add your live frontend URL here.
